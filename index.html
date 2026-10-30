@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#6D2E46">
+<title>Mora — café, tortitas y smoothies por encargo</title>
+<meta name="description" content="Una merienda hecha en casa. Café, tortitas y smoothies por encargo en Palermo. Vidriera de demostración de Nexvia IA.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF5EE;--ink:#2E2018;--berry:#6D2E46;--caramel:#C97B4A;--mint:#DCE8DC;--paper:#FFFDF9;--berry-soft:#F0E2E5;--muted:#6B5348;--r-sm:12px;--r-md:24px;--r-lg:32px;--space:clamp(72px,8vw,128px);--header:104px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:0}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--cream);color:var(--ink);font:400 16px/1.65 Manrope,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:var(--berry);color:var(--cream)}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+img{display:block;width:100%;max-width:100%;height:auto}
+svg{width:20px;height:20px;flex:none}
+button,a,summary{touch-action:manipulation}
+:focus-visible{outline:3px solid var(--berry);outline-offset:5px}
+[hidden]{display:none!important}
+h1,h2,h3,.serif{font-family:Fraunces,serif;font-weight:500;letter-spacing:-.025em;line-height:1.08;text-wrap:balance}
+h2{font-size:clamp(36px,4vw,52px)}
+h3{font-size:24px}
+em{font-weight:inherit}
+p{max-width:65ch}
+.wrap{width:min(1240px,calc(100% - 80px));margin-inline:auto}
+.section{padding-block:var(--space)}
+section[id]{scroll-margin-top:var(--header)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 22px;border:0;border-radius:999px;background:var(--berry);color:var(--paper);font-size:15px;font-weight:700;line-height:1.3;white-space:nowrap;transition:transform .2s,background .2s}
+.btn:hover{background:var(--ink);transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn.secondary{background:var(--paper);color:var(--ink);padding-inline:20px}
+.btn.secondary:hover{background:var(--berry-soft)}
+.text-link{display:inline-flex;gap:10px;align-items:center;min-height:44px;font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:5px}
+.muted{color:var(--muted)}
+.skip{position:absolute;z-index:100;left:24px;top:-80px;background:var(--berry);color:white;padding:12px 20px;border-radius:var(--r-sm)}
+.skip:focus{top:12px}
+.site-header{position:sticky;top:0;z-index:50;background:var(--cream)}
+.header-row{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:86px}
+.brand{display:inline-flex;align-items:center;gap:20px}
+.wordmark{font:500 46px/1 Fraunces,serif;letter-spacing:-.04em;color:var(--berry)}
+.brand-description{font-size:13px;line-height:1.5;max-width:112px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:600}
+.nav-links a{padding-block:12px}
+.nav-links a:hover{color:var(--berry);text-decoration:underline;text-underline-offset:6px}
+.nav-toggle{width:44px;height:44px;align-items:center;justify-content:center;border:0;border-radius:50%;background:var(--paper);color:var(--berry)}
+.nav-toggle svg{width:24px;height:24px}
+.hero{position:relative;padding-top:32px;padding-bottom:110px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:center}
+.hero-copy{padding-block:28px}
+.hero-label{font-size:13px;font-weight:600;color:var(--berry);margin-bottom:24px}
+.hero h1{font-size:clamp(54px,5.6vw,80px);line-height:1.03;letter-spacing:-.035em;margin-bottom:28px}
+.hero h1 em{color:var(--berry)}
+.hero-lead{font-size:17px;max-width:33rem;color:var(--muted)}
+.hero-ctas{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-location{font-size:13px;margin-top:24px;display:flex;align-items:center;gap:9px}
+.hero-location svg{width:17px;height:17px;color:var(--berry)}
+.hero-media{position:relative;isolation:isolate;margin-bottom:34px}
+.hero-main{overflow:hidden;border-radius:48% 48% var(--r-lg) var(--r-lg);background:var(--paper)}
+.hero-main img{aspect-ratio:1/.99;object-fit:cover;object-position:50% 44%}
+.hero-details{position:absolute;inset:auto -16px -112px -48px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;pointer-events:none;z-index:2}
+.hero-detail{width:43%;transform:rotate(-7deg)}
+.hero-detail img{aspect-ratio:1/1;object-fit:contain;object-position:center bottom}
+.hero-detail.cake{width:47%;transform:rotate(7deg)}
+.intro-row{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:36px}
+.intro-row p{max-width:28rem;color:var(--muted)}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.category{display:block;position:relative;min-height:400px;overflow:hidden;border-radius:var(--r-md);background:var(--ink);color:var(--paper)}
+.category img{height:400px;object-fit:cover;opacity:.86;transition:transform .6s ease}
+.category:nth-child(2){margin-top:40px}
+.category:nth-child(3){margin-top:16px}
+.category::after{content:"";position:absolute;inset:48% 0 0;background:linear-gradient(transparent,rgba(46,32,24,.8));pointer-events:none} /* taste-skill-ignore: neutral scrim over a photo for legible labels */
+.category .category-label{position:absolute;z-index:1;bottom:26px;left:26px;right:26px;display:flex;align-items:center;justify-content:space-between}
+.category h3{font-size:36px}
+.category .round-arrow{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--paper);color:var(--berry)}
+.category:hover img{transform:scale(1.04)}
+.menu-section{padding-top:60px;padding-bottom:60px}
+.menu-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:30px}
+.menu-heading p{color:var(--muted);max-width:29rem}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.product{min-width:0;background:var(--paper);border-radius:var(--r-md);overflow:hidden;display:flex;flex-direction:column}
+.product-picture{overflow:hidden;background:var(--paper)}
+.product-picture img{aspect-ratio:1/1;object-fit:cover;transition:transform .5s}
+.product:hover .product-picture img{transform:scale(1.025)}
+.product-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.product h3{font-size:24px;margin-bottom:10px}
+.product-description{font-size:14px;color:var(--muted);margin-bottom:22px}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+.price{font:500 25px/1.2 Fraunces,serif;white-space:nowrap;color:var(--berry)}
+.price small{display:block;font:500 13px/1.5 Manrope,sans-serif;color:var(--muted)}
+.order-link{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:44px;padding:10px 16px;background:var(--berry);color:var(--paper);border-radius:999px;font-size:13px;font-weight:700;transition:background .2s,transform .2s}
+.order-link:hover{background:var(--ink);transform:translateY(-2px)}
+.order-link svg{width:15px;height:15px}
+.cake-grid{grid-template-columns:repeat(2,1fr)}
+.cake-grid .product-picture img{aspect-ratio:1.9/1}
+.cake-grid .product-body{padding:28px 30px}
+.cake-grid .product h3{font-size:28px}
+.menu-notice{font-size:13px;color:var(--muted);margin-top:24px}
+.smoothie-section{background:var(--mint);margin-top:42px;padding-block:72px}
+.smoothie-grid{grid-template-columns:repeat(3,1fr)}
+.smoothie-grid .product-picture img{aspect-ratio:1.18/1;object-position:center 58%}
+.combo-section{padding-block:var(--space)}
+.combo{display:grid;grid-template-columns:1fr 1fr;background:var(--berry);color:var(--paper);border-radius:var(--r-lg);overflow:hidden;align-items:stretch}
+.combo-image img{width:100%;height:100%;min-height:440px;object-fit:cover;object-position:55% center}
+.combo-copy{padding:clamp(32px,4.5vw,72px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.combo-copy h2{font-size:clamp(38px,4vw,54px);margin-bottom:24px}
+.combo-copy p{color:var(--cream);font-size:17px}
+.combo-price{font:500 46px/1.2 Fraunces,serif;margin-block:28px 24px}
+.combo .order-link{background:var(--cream);color:var(--berry);padding-inline:24px;min-height:48px;font-size:15px}
+.combo :focus-visible{outline-color:var(--cream)}
+.favorites-section{padding-bottom:var(--space);overflow:hidden}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filter{min-height:44px;padding:10px 20px;border:0;border-radius:999px;color:var(--ink);background:var(--paper);font-size:14px;font-weight:600;transition:background .2s,color .2s}
+.filter[aria-pressed="true"],.filter:hover{background:var(--berry);color:var(--paper)}
+.favorite-rail{display:flex;align-items:center;gap:32px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:24px 20px 32px;margin-inline:-20px;scrollbar-color:var(--berry) var(--berry-soft);scrollbar-width:thin}
+.favorite-rail.is-single{justify-content:center}
+.favorite{flex:0 0 266px;scroll-snap-align:center;transition:flex-basis .3s}
+.favorite.is-featured{flex-basis:330px}
+.favorite img{width:100%;aspect-ratio:1/1.12;object-fit:cover;border-radius:48% 48% var(--r-md) var(--r-md);margin-bottom:20px}
+.favorite.is-featured img{aspect-ratio:1/1.16}
+.favorite h3{font-size:24px;margin-bottom:12px}
+.favorite .product-bottom{margin-top:12px}
+.favorite .price{font-size:23px}
+.filter-status{font-size:13px;color:var(--muted);min-height:22px;margin-top:8px}
+.kitchen-section{padding-bottom:var(--space)}
+.kitchen-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,112px);align-items:center}
+.kitchen-image{padding-left:40px}
+.kitchen-image img{aspect-ratio:1/.98;object-fit:cover;border-radius:var(--r-md);transform:rotate(-3deg)}
+.kitchen-copy h2{margin-bottom:28px}
+.kitchen-copy p{font-size:17px;color:var(--muted);margin-bottom:18px}
+.signature{font:500 italic 32px/1.2 Fraunces,serif;color:var(--berry);margin-top:24px}
+.how-section{padding-block:64px 72px;background:var(--berry-soft)}
+.how-section .intro-row{align-items:center}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;list-style:none;counter-reset:paso}
+.steps li{counter-increment:paso;position:relative;padding-left:42px}
+.steps li::before{content:counter(paso);position:absolute;left:0;top:0;font:500 30px/1.1 Fraunces,serif;color:var(--berry)}
+.steps h3{font-size:24px;margin-bottom:14px}
+.steps p{font-size:15px;color:var(--muted)}
+.advance-note{margin-top:30px;font-size:14px;color:var(--berry)}
+.faq-section{padding-block:var(--space)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.faq-intro p{color:var(--muted);margin-top:24px;max-width:24rem}
+.faq-list{display:grid;gap:12px}
+.faq-list details{background:var(--paper);border-radius:var(--r-sm);padding:0 24px}
+.faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px;padding-block:18px;list-style:none;cursor:pointer;font-size:15px;font-weight:600}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary svg{width:18px;height:18px;color:var(--berry);transition:transform .2s}
+.faq-list details[open] summary svg{transform:rotate(45deg)}
+.faq-list details p{font-size:15px;color:var(--muted);padding-bottom:24px}
+.closing-section{padding-bottom:var(--space)}
+.closing{position:relative;background:var(--berry-soft);border-radius:var(--r-lg);padding:72px 48px;text-align:center;isolation:isolate;overflow:hidden}
+.closing::before{content:"";position:absolute;inset:16px;background:rgba(255,253,249,.5);backdrop-filter:blur(8px);border-radius:var(--r-md);z-index:-1}
+.closing h2{font-size:clamp(36px,4.6vw,60px);margin-bottom:24px}
+.closing p{margin:0 auto 30px;color:var(--muted);max-width:35rem}
+.closing-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px}
+.site-footer{background:var(--berry);color:var(--cream);padding:58px 0 104px}
+.footer-top{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:48px}
+.footer-brand .wordmark{font-size:66px;color:var(--cream)}
+.footer-brand p{font-size:13px;margin-top:14px}
+.footer-info p{font-size:14px;line-height:1.8;margin-bottom:16px}
+.footer-info strong{font-weight:700;display:block;margin-bottom:8px;color:var(--paper)}
+.footer-bottom{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:44px;font-size:13px;color:var(--cream)}
+.site-footer a{text-decoration:underline;text-underline-offset:4px}
+.site-footer :focus-visible{outline-color:var(--cream)}
+.float-wa{position:fixed;bottom:20px;right:20px;z-index:60;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--berry);color:var(--paper);box-shadow:0 8px 24px rgba(46,32,24,.25);outline:3px solid var(--cream);transition:transform .2s} /* taste-skill-ignore: shadow on the fixed floating control */
+.float-wa svg{width:27px;height:27px}
+.float-wa:hover{transform:translateY(-3px)}
+@media(min-width:901px){.nav-toggle{display:none!important}}
+@media(max-width:1050px){.hero-grid{gap:36px}.hero h1{font-size:60px}.product-grid{gap:16px}.product-body{padding:18px}.product .price{font-size:22px}.order-link{padding-inline:12px}.nav-links{gap:18px}}
+@media(max-width:900px){
+ .wrap{width:calc(100% - 48px)}.header-row{min-height:76px;flex-wrap:wrap;gap:12px;padding-block:12px}.brand-description{font-size:13px}.wordmark{font-size:42px}
+ .nav-toggle{display:flex}.nav-links{flex-basis:100%;gap:24px;overflow-x:auto;white-space:nowrap;padding-bottom:4px}.site-header.has-js .nav-links{padding-top:8px}
+ .hero{padding-top:20px;padding-bottom:90px}.hero-grid{grid-template-columns:1fr;gap:48px}.hero-copy{padding-block:10px 0}.hero h1{font-size:64px}.hero-lead{max-width:35rem}
+ .hero-media{width:min(560px,92%);margin:0 auto 30px}.hero-main img{aspect-ratio:1/1}.hero-details{left:-32px;right:-20px;bottom:-90px}
+ .categories{gap:16px}.category,.category img{min-height:330px;height:330px}.category h3{font-size:29px}.category .category-label{left:18px;right:18px;bottom:20px}.category .round-arrow{width:38px;height:38px}
+ .product-grid{grid-template-columns:repeat(2,1fr)}.smoothie-grid{grid-template-columns:repeat(3,1fr)}.smoothie-grid .product-body{padding:18px 16px}.smoothie-grid .product-bottom{align-items:flex-start;gap:14px;flex-direction:column}
+ .combo-copy{padding:32px}.combo-copy h2{font-size:40px}.combo-image img{min-height:440px}.kitchen-grid{gap:40px}.kitchen-image{padding-left:10px}.faq-grid{grid-template-columns:1fr;gap:36px}.faq-intro p{max-width:none}
+ .steps{gap:24px}.footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-bottom{max-width:90%}
+}
+@media(max-width:600px){
+ :root{--space:76px;--header:100px}.hero-grid{gap:40px}.hero-label{margin-bottom:20px;font-size:13px}.hero h1{font-size:44px;letter-spacing:-.03em;margin-bottom:24px}.hero-lead{font-size:16px}.hero-ctas{margin-top:24px;gap:10px}.hero-ctas .btn{padding-inline:16px;font-size:14px}.hero-ctas .secondary{padding-inline:17px}.hero-location{font-size:13px;margin-top:20px}
+ .hero-media{width:90%}.hero-main{border-radius:46% 46% 24px 24px}.hero-main img{aspect-ratio:1/1.05}.hero-details{bottom:-76px;left:-24px;right:-24px}.hero-detail{width:44%}.hero-detail.cake{width:48%}
+ .intro-row,.menu-heading{display:block}.intro-row h2,.menu-heading h2{margin-bottom:18px}.intro-row p,.menu-heading p{font-size:15px}.intro-row{margin-bottom:26px}
+ .categories{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding-bottom:20px;scrollbar-color:var(--berry) var(--berry-soft);scrollbar-width:thin}
+ .category{flex:0 0 78%;scroll-snap-align:start;margin-top:0!important}.category,.category img{height:360px;min-height:360px}.category h3{font-size:34px}.category .category-label{left:24px;right:24px}
+ .menu-section{padding-block:38px}.product-grid{gap:16px}.product{border-radius:18px}.product-body{padding:18px 14px}.product h3{font-size:23px}.product-description{font-size:13px;margin-bottom:16px;line-height:1.5}.product-bottom{flex-wrap:wrap;gap:14px}.product .price{font-size:23px}.order-link{padding:10px 16px}.cake-grid{grid-template-columns:1fr}.cake-grid .product-picture img{aspect-ratio:1.6/1}.cake-grid .product-body{padding:24px}.cake-grid .product h3{font-size:27px}
+ .smoothie-section{margin-top:36px;padding-block:54px}.smoothie-grid{grid-template-columns:1fr}.smoothie-grid .product{display:grid;grid-template-columns:43% 1fr}.smoothie-grid .product-picture img{height:100%;min-height:245px;aspect-ratio:auto;object-position:50% 55%}.smoothie-grid .product-body{padding:24px 20px}.smoothie-grid .product h3{font-size:25px}.smoothie-grid .product-description{font-size:13px}.smoothie-grid .product-bottom{gap:14px}.smoothie-grid .order-link{min-height:44px}
+ .combo{grid-template-columns:1fr}.combo-image img{height:300px;min-height:0}.combo-copy{padding:36px 28px 40px}.combo-copy h2{font-size:40px}.combo-price{font-size:42px;margin-block:24px}
+ .filter-bar{gap:6px}.filter{font-size:13px;padding-inline:15px}.favorite-rail{gap:24px}.favorite{flex-basis:230px}.favorite.is-featured{flex-basis:278px}.favorite h3{font-size:24px}.favorite .order-link{padding-inline:16px}
+ .kitchen-grid{grid-template-columns:1fr;gap:40px}.kitchen-image{width:87%;padding-left:12px}.kitchen-image img{aspect-ratio:1/.9}.kitchen-copy h2{font-size:36px}.kitchen-copy p{font-size:16px}
+ .how-section{padding-block:54px}.steps{grid-template-columns:1fr;gap:30px}.steps li{padding-left:46px}.steps h3{font-size:25px;margin-bottom:10px}.steps p{font-size:15px}.advance-note{font-size:13px;margin-top:28px}
+ .faq-grid{gap:28px}.faq-list details{padding-inline:20px}.faq-list summary{font-size:14px;min-height:76px}.faq-list details p{font-size:14px}
+ .closing{padding:54px 28px}.closing::before{inset:10px;border-radius:22px}.closing h2{font-size:38px}.closing p{font-size:15px}.closing-actions{flex-direction:column}.closing-actions .btn{font-size:14px;padding-inline:20px}
+ .site-footer{padding-top:46px;padding-bottom:110px}.footer-top{grid-template-columns:1fr;gap:20px}.footer-brand{grid-column:auto}.footer-brand .wordmark{font-size:60px}.footer-info p{font-size:13px;margin-bottom:16px}.footer-bottom{display:block;max-width:100%;margin-top:20px;padding-right:10px;font-size:13px}.footer-bottom p{margin-bottom:16px}.float-wa{width:54px;height:54px;bottom:18px;right:18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Ir al contenido</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.2"/></symbol>
+ <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></symbol>
+ <symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.6a8.5 8.5 0 1 1 16.1-4.2Z"/><path d="M8 7.3c.5-.2.9.9 1.3 1.7.3.6-.5 1-.5 1.4.8 1.7 1.7 2.6 3.5 3.4.5 0 .8-1 1.4-.8l2 1c.5.3.2 1.3-.4 1.6-1.7 1-4.6-.9-6.1-2.4C7.8 11.7 6.4 8.1 8 7.3Z"/></symbol>
+</defs></svg>
+<header class="site-header" id="site-header">
+ <div class="wrap header-row">
+  <a href="#" class="brand" aria-label="Mora, inicio"><span class="wordmark">mora</span><span class="brand-description">café · tortitas<br>smoothies</span></a>
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-controls="nav-links" aria-expanded="false" hidden><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+  <nav class="nav-links" id="nav-links" aria-label="Navegación principal"><a href="#menu">El menú</a><a href="#favoritos">Favoritos</a><a href="#cocina">De casa</a><a href="#como-pedir">Cómo pedir</a></nav>
+ </div>
+</header>
+<main id="contenido">
+ <section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+   <div class="hero-copy">
+    <p class="hero-label" data-reveal>Hecho en casa · Por encargo</p>
+    <h1 id="hero-title" data-reveal>Tu merienda,<br><em>hecha en casa.</em></h1>
+    <p class="hero-lead" data-reveal>Café, tortitas y smoothies que preparo en mi cocina de Palermo. Elegí tu antojo y coordinamos el retiro o el envío por la zona.</p>
+    <div class="hero-ctas" data-reveal><a class="btn" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir por WhatsApp</a><a class="btn secondary" href="#menu">Ver el menú</a></div>
+    <p class="hero-location" data-reveal><svg aria-hidden="true"><use href="#i-pin"/></svg>Palermo, CABA · Retiro y envíos en la zona</p>
+   </div>
+   <div class="hero-media">
+    <figure class="hero-main"><img src="assets/hero-merienda.webp" alt="Tortita casera cortada y una taza de café sobre una mesa clara" width="1400" height="1866" fetchpriority="high"></figure>
+    <div class="hero-details" aria-hidden="true"><figure class="hero-detail smoothie"><img src="assets/smoothie-recorte.webp" alt="Smoothie violeta sostenido con la mano, recortado sin fondo" width="650" height="650"></figure><figure class="hero-detail cake"><img src="assets/tortita-recorte.webp" alt="Porción de tortita sobre un plato sostenido con la mano, sin fondo" width="650" height="650"></figure></div>
+   </div>
+  </div>
+ </section>
+ <section class="section" id="menu" aria-labelledby="menu-title">
+  <div class="wrap">
+   <div class="intro-row"><h2 id="menu-title" data-reveal>Elegí tu antojo</h2><p data-reveal>Un café, algo dulce o una pausa bien fresca.<br>La merienda la armás vos.</p></div>
+   <div class="categories" aria-label="Categorías del menú">
+    <a class="category" href="#cafe" data-reveal><img src="assets/flat-white.webp" alt="Café con leche y espuma en una taza blanca" width="800" height="1000" loading="lazy"><div class="category-label"><h3>Café</h3><span class="round-arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div></a>
+    <a class="category" href="#tortitas" data-reveal><img src="assets/carrot-cake.webp" alt="Torta casera con nueces sobre un plato" width="900" height="1350" loading="lazy"><div class="category-label"><h3>Tortitas</h3><span class="round-arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div></a>
+    <a class="category" href="#smoothies" data-reveal><img src="assets/smoothie-frutos.webp" alt="Smoothie rosado con frutos rojos frescos" width="800" height="1200" loading="lazy"><div class="category-label"><h3>Smoothies</h3><span class="round-arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div></a>
+   </div>
+  </div>
+ </section>
+ <section class="menu-section" id="cafe" aria-labelledby="cafe-title">
+  <div class="wrap">
+   <div class="menu-heading"><h2 id="cafe-title" data-reveal>Primero, un café</h2><p data-reveal>Cortito, con leche o con más espuma.<br>Ese primer sorbo ya es una pausa.</p></div>
+   <div class="product-grid">
+    <article class="product" data-product="espresso" data-reveal><div class="product-picture"><img src="assets/espresso.webp" alt="Espresso oscuro en una taza de vidrio con plato" width="800" height="1200" loading="lazy"></div><div class="product-body"><h3>Espresso</h3><p class="product-description">Cortito e intenso.</p><div class="product-bottom"><span class="price">$3.500</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20Espresso." target="_blank" rel="noopener" aria-label="Pedir Espresso">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+    <article class="product" data-product="latte" data-reveal><div class="product-picture"><img src="assets/latte.webp" alt="Latte con dibujo de espuma en un vaso de vidrio" width="800" height="1200" loading="lazy"></div><div class="product-body"><h3>Latte</h3><p class="product-description">Café y leche bien cremosa.</p><div class="product-bottom"><span class="price">$4.800</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20Latte." target="_blank" rel="noopener" aria-label="Pedir Latte">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+    <article class="product" data-product="capuchino" data-reveal><div class="product-picture"><img src="assets/capuchino.webp" alt="Capuchino con espuma en taza blanca sobre fondo oscuro" width="800" height="800" loading="lazy"></div><div class="product-body"><h3>Capuchino</h3><p class="product-description">Una capa de espuma suave.</p><div class="product-bottom"><span class="price">$5.200</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20Capuchino." target="_blank" rel="noopener" aria-label="Pedir Capuchino">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+    <article class="product" data-product="flat-white" data-reveal><div class="product-picture"><img src="assets/flat-white.webp" alt="Café con leche y arte de espuma visto de cerca" width="800" height="1000" loading="lazy"></div><div class="product-body"><h3>Flat white</h3><p class="product-description">Más café, espuma finita.</p><div class="product-bottom"><span class="price">$5.000</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20Flat%20white." target="_blank" rel="noopener" aria-label="Pedir Flat white">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+   </div>
+  </div>
+ </section>
+ <section class="menu-section" id="tortitas" aria-labelledby="tortitas-title">
+  <div class="wrap">
+   <div class="menu-heading"><h2 id="tortitas-title" data-reveal>Un pedacito de casa</h2><p data-reveal>Para acompañar el café, llevar a una juntada<br>o guardarte un mimo para más tarde.</p></div>
+   <div class="product-grid cake-grid">
+    <article class="product" data-product="ricota" data-reveal><div class="product-picture"><img src="assets/tortita.webp" alt="Porción de torta clara servida en un plato blanco" width="800" height="1200" loading="lazy" style="object-position:center 66%"></div><div class="product-body"><h3>Porción de torta de ricota</h3><p class="product-description">Relleno suave y base doradita.</p><div class="product-bottom"><span class="price">$6.500</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20una%20porci%C3%B3n%20de%20torta%20de%20ricota." target="_blank" rel="noopener" aria-label="Pedir porción de torta de ricota">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+    <article class="product" data-product="brownie" data-reveal><div class="product-picture"><img src="assets/brownie.webp" alt="Brownies de chocolate con nueces apilados sobre un plato" width="800" height="1200" loading="lazy" style="object-position:center 58%"></div><div class="product-body"><h3>Brownie con nuez</h3><p class="product-description">Chocolate y nueces en cada bocado.</p><div class="product-bottom"><span class="price">$5.500</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20Brownie%20con%20nuez." target="_blank" rel="noopener" aria-label="Pedir Brownie con nuez">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+    <article class="product" data-product="carrot" data-reveal><div class="product-picture"><img src="assets/carrot-cake.webp" alt="Carrot cake casera con cobertura y nueces" width="900" height="1350" loading="lazy" style="object-position:center 65%"></div><div class="product-body"><h3>Porción de carrot cake</h3><p class="product-description">Zanahoria, especias y cobertura cremosa.</p><div class="product-bottom"><span class="price">$6.800</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20una%20porci%C3%B3n%20de%20carrot%20cake." target="_blank" rel="noopener" aria-label="Pedir porción de carrot cake">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+    <article class="product" data-product="torta-entera" data-reveal><div class="product-picture"><img src="assets/torta-entera.webp" alt="Torta casera entera con cobertura y nueces, preparada para compartir" width="900" height="650" loading="lazy" style="object-position:center 68%"></div><div class="product-body"><h3>Torta entera por encargo</h3><p class="product-description">Para compartir. Pedila con 48 h de anticipación.</p><div class="product-bottom"><span class="price"><small>desde</small>$38.000</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20consultar%20por%20una%20torta%20entera%20por%20encargo%20con%2048%20h%20de%20anticipaci%C3%B3n." target="_blank" rel="noopener" aria-label="Pedir torta entera por encargo">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+   </div>
+  </div>
+ </section>
+ <section class="smoothie-section" id="smoothies" aria-labelledby="smoothies-title">
+  <div class="wrap">
+   <div class="menu-heading"><h2 id="smoothies-title" data-reveal>La pausa más fresca</h2><p data-reveal>Frutas, colores y algo rico para tomar.<br>Elegí el que más te tiente.</p></div>
+   <div class="product-grid smoothie-grid">
+    <article class="product" data-product="verde" data-reveal><div class="product-picture"><img src="assets/smoothie-verde.webp" alt="Smoothie verde en vaso de vidrio con sorbete" width="800" height="1066" loading="lazy"></div><div class="product-body"><h3>Verde detox</h3><p class="product-description">Fruta y verdes, bien fresquito.</p><div class="product-bottom"><span class="price">$6.000</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20smoothie%20Verde%20detox." target="_blank" rel="noopener" aria-label="Pedir smoothie Verde detox">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+    <article class="product" data-product="frutos" data-reveal><div class="product-picture"><img src="assets/smoothie-frutos.webp" alt="Smoothie de frutos rojos con frambuesas y moras" width="800" height="1200" loading="lazy"></div><div class="product-body"><h3>Frutos rojos</h3><p class="product-description">Dulce y frutal, con un toque ácido.</p><div class="product-bottom"><span class="price">$6.500</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20smoothie%20de%20Frutos%20rojos." target="_blank" rel="noopener" aria-label="Pedir smoothie Frutos rojos">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+    <article class="product" data-product="mango" data-reveal><div class="product-picture"><img src="assets/smoothie-mango.webp" alt="Smoothie amarillo con mango fresco junto al vaso" width="800" height="1200" loading="lazy"></div><div class="product-body"><h3>Mango y maracuyá</h3><p class="product-description">Una mezcla tropical y cremosa.</p><div class="product-bottom"><span class="price">$6.200</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20smoothie%20de%20Mango%20y%20maracuy%C3%A1." target="_blank" rel="noopener" aria-label="Pedir smoothie Mango y maracuyá">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></article>
+   </div>
+  </div>
+ </section>
+ <section class="combo-section" aria-labelledby="combo-title">
+  <div class="wrap"><div class="combo">
+   <figure class="combo-image" data-reveal><img src="assets/combo-merienda.webp" alt="Café y porción de torta sobre una mesa de madera" width="1200" height="800" loading="lazy"></figure>
+   <div class="combo-copy"><h2 id="combo-title" data-reveal>Merienda<br>para dos</h2><p data-reveal>Dos cafés + dos porciones a elección.<br>Un plan rico, de esos que se comparten.</p><div class="combo-price" data-reveal>$16.900</div><a class="order-link" data-reveal href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20el%20combo%20Merienda%20para%20dos%20%282%20caf%C3%A9s%20%2B%202%20porciones%20a%20elecci%C3%B3n%29." target="_blank" rel="noopener" aria-label="Pedir combo Merienda para dos">Pedir el combo<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div></div>
+ </section>
+ <section class="favorites-section" id="favoritos" aria-labelledby="favorites-title">
+  <div class="wrap">
+   <div class="intro-row"><h2 id="favorites-title" data-reveal>Un estante de antojos</h2><p data-reveal>Mirá un poco de todo o andá directo a lo que te gusta. Deslizá para seguir eligiendo.</p></div>
+   <div class="filter-bar" id="filter-bar" role="group" aria-label="Filtrar favoritos" hidden><button type="button" class="filter" data-filter="todo" aria-pressed="true">Todo</button><button type="button" class="filter" data-filter="cafe" aria-pressed="false">Café</button><button type="button" class="filter" data-filter="tortitas" aria-pressed="false">Tortitas</button><button type="button" class="filter" data-filter="smoothies" aria-pressed="false">Smoothies</button></div>
+   <div class="favorite-rail" id="favorite-rail" role="region" aria-label="Estante de favoritos" tabindex="0">
+    <article class="favorite" data-category="cafe"><img src="assets/espresso.webp" alt="Espresso en taza de vidrio" width="800" height="1200" loading="lazy"><h3>Espresso</h3><div class="product-bottom"><span class="price">$3.500</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20Espresso." target="_blank" rel="noopener" aria-label="Pedir Espresso de favoritos">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></article>
+    <article class="favorite" data-category="tortitas"><img src="assets/brownie.webp" alt="Brownies de chocolate y nuez" width="800" height="1200" loading="lazy"><h3>Brownie con nuez</h3><div class="product-bottom"><span class="price">$5.500</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20Brownie%20con%20nuez." target="_blank" rel="noopener" aria-label="Pedir Brownie con nuez de favoritos">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></article>
+    <article class="favorite is-featured" data-category="tortitas"><img src="assets/tortita.webp" alt="Porción de torta en plato blanco" width="800" height="1200" loading="lazy" style="object-position:center 70%"><h3>Torta de ricota</h3><div class="product-bottom"><span class="price">$6.500</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20una%20porci%C3%B3n%20de%20torta%20de%20ricota." target="_blank" rel="noopener" aria-label="Pedir porción de torta de ricota de favoritos">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></article>
+    <article class="favorite" data-category="smoothies"><img src="assets/smoothie-frutos.webp" alt="Smoothie de frutos rojos" width="800" height="1200" loading="lazy"><h3>Frutos rojos</h3><div class="product-bottom"><span class="price">$6.500</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20smoothie%20de%20Frutos%20rojos." target="_blank" rel="noopener" aria-label="Pedir smoothie Frutos rojos de favoritos">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></article>
+    <article class="favorite" data-category="cafe"><img src="assets/latte.webp" alt="Latte con espuma en vaso de vidrio" width="800" height="1200" loading="lazy"><h3>Latte</h3><div class="product-bottom"><span class="price">$4.800</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20un%20Latte." target="_blank" rel="noopener" aria-label="Pedir Latte de favoritos">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></article>
+    <article class="favorite" data-category="tortitas"><img src="assets/carrot-cake.webp" alt="Carrot cake con nueces" width="900" height="1350" loading="lazy" style="object-position:center 65%"><h3>Carrot cake</h3><div class="product-bottom"><span class="price">$6.800</span><a class="order-link" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20pedir%20una%20porci%C3%B3n%20de%20carrot%20cake." target="_blank" rel="noopener" aria-label="Pedir porción de carrot cake de favoritos">Pedir<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></article>
+   </div>
+   <p id="filter-status" class="filter-status" role="status" aria-live="polite">6 favoritos para tu merienda.</p>
+  </div>
+ </section>
+ <section class="kitchen-section" id="cocina" aria-labelledby="kitchen-title">
+  <div class="wrap kitchen-grid">
+   <figure class="kitchen-image" data-reveal><img src="assets/cocina.webp" alt="Manos preparando una masa con harina y huevos en una cocina" width="1000" height="1500" loading="lazy"></figure>
+   <div class="kitchen-copy"><h2 id="kitchen-title" data-reveal>De mi cocina<br>a tu merienda</h2><p data-reveal>Soy Male. Mora nace en mi cocina de Palermo, entre el aroma del café y las ganas de preparar algo rico para compartir.</p><p data-reveal>Trabajo por encargo: me contás qué te tienta y coordinamos cuándo lo retirás o cómo te lo hago llegar por la zona.</p><div class="signature" data-reveal>Con cariño, Male</div></div>
+  </div>
+ </section>
+ <section class="how-section" id="como-pedir" aria-labelledby="how-title">
+  <div class="wrap"><div class="intro-row"><h2 id="how-title" data-reveal>De antojo a merienda</h2><p data-reveal>Pedidos de lunes a sábado, de 9 a 19 h.</p></div>
+   <ol class="steps"><li data-reveal><h3>Pedís por WhatsApp</h3><p>Elegís lo que te gusta y nos contás tu pedido.</p></li><li data-reveal><h3>Lo preparamos en el día</h3><p>Coordinamos la disponibilidad y el horario de tu merienda.</p></li><li data-reveal><h3>Retirás o te lo enviamos</h3><p>Retiro a convenir en Palermo o envío en Palermo y barrios cercanos.</p></li></ol>
+   <p class="advance-note" data-reveal>Las tortas enteras llevan un poquito más de tiempo: pedilas con 48 h de anticipación.</p>
+  </div>
+ </section>
+ <section class="faq-section" id="preguntas" aria-labelledby="faq-title">
+  <div class="wrap faq-grid"><div class="faq-intro"><h2 id="faq-title" data-reveal>Antes de pedir</h2><p data-reveal>Las respuestas a esas dudas que siempre aparecen antes de una merienda.</p></div>
+   <div class="faq-list">
+    <details><summary>¿Con cuánto tiempo pido una torta entera?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Con 48 h de anticipación. Así coordinamos la torta y el momento de retiro o envío. Los pedidos se toman de lunes a sábado, de 9 a 19 h.</p></details>
+    <details><summary>¿Por dónde hacés envíos y cuánto cuestan?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>En Palermo y barrios cercanos. El costo depende de la dirección; lo coordinamos antes de confirmar el pedido. También podés retirar en Palermo, en un horario a convenir.</p></details>
+    <details><summary>¿Qué medios de pago aceptás?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Transferencia y Mercado Pago. Coordinamos el medio de pago al confirmar tu pedido.</p></details>
+    <details><summary>¿Se puede pedir sin TACC?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Consultanos, preparamos opciones sin TACC por encargo.</p></details>
+   </div>
+  </div>
+ </section>
+ <section class="closing-section" aria-labelledby="closing-title"><div class="wrap"><div class="closing">
+  <h2 id="closing-title" data-reveal>¿Antojo de algo rico?</h2><p data-reveal>Elegí tu merienda. Yo me encargo del café, de lo dulce y de ese ratito hecho en casa.</p><div class="closing-actions" data-reveal><a class="btn" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir por WhatsApp</a><a class="btn secondary" href="#menu">Ver el menú</a></div>
+ </div></div></section>
+</main>
+<footer class="site-footer">
+ <div class="wrap"><div class="footer-top">
+  <div class="footer-brand"><a class="wordmark" href="#" aria-label="Mora, volver al inicio">mora</a><p>café · tortitas · smoothies</p></div>
+  <div class="footer-info"><p><strong>De Palermo, para tu merienda</strong>Palermo, CABA.<br>Retiro a convenir y envíos en la zona.</p><p>Instagram: @mora.casera</p></div>
+  <div class="footer-info"><p><strong>Pedidos por encargo</strong>Lunes a sábado, de 9 a 19 h.<br>Tortas enteras: 48 h de anticipación.</p><a class="text-link" href="#menu">Volver al menú<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+ </div><div class="footer-bottom"><p>Vidriera de demostración de Nexvia IA · Marca, personas y datos ficticios.</p><p>Fotografías ilustrativas de <a href="https://www.pexels.com/license/" target="_blank" rel="noopener">Pexels</a>.</p></div></div>
+</footer>
+<a class="float-wa" href="https://wa.me/5491100000000?text=Hola%20Mora!%20Quiero%20hacer%20un%20pedido." aria-label="Pedir por WhatsApp" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+(function(){
+ 'use strict';
+ var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var header=document.getElementById('site-header'),toggle=document.getElementById('nav-toggle'),nav=document.getElementById('nav-links'),mobile=window.matchMedia('(max-width:900px)');
+ header.classList.add('has-js');
+ function setMenu(open){nav.hidden=mobile.matches&&!open;toggle.setAttribute('aria-expanded',String(open&&mobile.matches));toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');}
+ function adaptMenu(){toggle.hidden=!mobile.matches;setMenu(false);}
+ adaptMenu();mobile.addEventListener('change',adaptMenu);
+ toggle.addEventListener('click',function(){setMenu(toggle.getAttribute('aria-expanded')!=='true');});
+ nav.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false);});
+ header.addEventListener('keydown',function(e){if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){setMenu(false);toggle.focus();}});
+ var rail=document.getElementById('favorite-rail'),bar=document.getElementById('filter-bar'),status=document.getElementById('filter-status'),favorites=Array.from(rail.querySelectorAll('.favorite'));
+ bar.hidden=false;
+ function filterFavorites(category){
+  var visible=[];
+  favorites.forEach(function(card){var show=category==='todo'||card.dataset.category===category;card.hidden=!show;card.classList.remove('is-featured');if(show)visible.push(card);});
+  bar.querySelectorAll('button').forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.filter===category));});
+  var featured=visible[Math.floor((visible.length-1)/2)];if(featured)featured.classList.add('is-featured');
+  rail.classList.toggle('is-single',visible.length===1);
+  var labels={todo:'para tu merienda',cafe:'de café',tortitas:'de tortitas',smoothies:'de smoothies'};
+  status.textContent=visible.length+(visible.length===1?' favorito ':' favoritos ')+labels[category]+'.';
+  requestAnimationFrame(function(){if(featured)rail.scrollLeft=featured.offsetLeft-rail.offsetLeft-(rail.clientWidth-featured.offsetWidth)/2;});
+ }
+ bar.addEventListener('click',function(e){var button=e.target.closest('[data-filter]');if(button)filterFavorites(button.dataset.filter);});
+ filterFavorites('todo');
+ if(reduce)return;
+ var lenis=null;
+ if(window.Lenis){lenis=new Lenis({duration:.9,smoothWheel:true});if(window.ScrollTrigger)lenis.on('scroll',ScrollTrigger.update);}
+ if(window.gsap&&window.ScrollTrigger){
+  gsap.registerPlugin(ScrollTrigger);
+  if(lenis){gsap.ticker.add(function(time){lenis.raf(time*1000);});gsap.ticker.lagSmoothing(0);}
+  gsap.utils.toArray('[data-reveal]').forEach(function(el){gsap.from(el,{opacity:0,y:18,duration:.65,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 94%',once:true}});});
+  gsap.from('.hero-main',{opacity:0,scale:.975,duration:.9,ease:'power2.out'});
+  gsap.to('.hero-detail.smoothie',{y:-14,rotation:-4,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero-detail.cake',{y:-22,rotation:4,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ }else if(lenis){function raf(time){lenis.raf(time);requestAnimationFrame(raf);}requestAnimationFrame(raf);}
+})();
+</script>
+</body>
+</html>
